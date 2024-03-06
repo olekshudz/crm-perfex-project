@@ -5,8 +5,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import pages.MainPage;
-import pages.proposals.ProposalsPage;
+import pages.employeepages.MainPage;
+import pages.employeepages.proposals.ProposalsPage;
 import utils.DriverHelper;
 
 import java.util.List;
@@ -34,8 +34,8 @@ public class SalesModuleSteps {
                 mainPage.verifyOrderOfSalesSubModule(expectedOrder));
     }
 
-    @Then("User clicks Click {string} module")
-    public void user_clicks_click_module(String subModuleName) {
+    @Then("User clicks {string} module")
+    public void user_clicks_module(String subModuleName) {
         mainPage.selectSalesModule(subModuleName);
     }
 

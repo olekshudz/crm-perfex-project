@@ -1,19 +1,17 @@
-package pages.proposals;
+package pages.employeepages.proposals;
 
 import com.google.common.util.concurrent.Uninterruptibles;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 
-import java.text.DecimalFormat;
 import java.time.Duration;
 import java.util.List;
 
 public class NewProposalPage {
-
-    private DecimalFormat decimalFormat;
 
     public NewProposalPage(WebDriver driver) {
         PageFactory.initElements(driver, this);

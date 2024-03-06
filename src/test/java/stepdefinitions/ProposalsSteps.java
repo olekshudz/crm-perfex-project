@@ -5,12 +5,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import pages.MainPage;
-import pages.proposals.NewProposalPage;
-import pages.proposals.ProposalsPage;
+import pages.employeepages.MainPage;
+import pages.employeepages.proposals.NewProposalPage;
+import pages.employeepages.proposals.ProposalsPage;
+import utils.DataTableUtils;
 import utils.DriverHelper;
 
-import java.util.List;
 import java.util.Map;
 
 public class ProposalsSteps {
@@ -20,6 +20,8 @@ public class ProposalsSteps {
     private ProposalsPage proposalsPage = new ProposalsPage(driver);
     private NewProposalPage newProposalPage = new NewProposalPage(driver);
 
+    Map<String, String> rowData;
+
     @When("Click New Proposal button from top")
     public void click_button_from_top() {
         proposalsPage.clickNewProposal();
@@ -27,8 +29,7 @@ public class ProposalsSteps {
 
     @When("User fills new proposal info with:")
     public void fill_the_subject_line_with(DataTable dataTable) {
-        List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
-        Map<String, String> rowData = data.get(0);
+        rowData = DataTableUtils.getDataFromTable(dataTable);
         newProposalPage.fillSubject(rowData.get("subject"));
         newProposalPage.selectRelated(rowData.get("related"));
         newProposalPage.selectCustomer(rowData.get("customer"), rowData.get("customerName"));
@@ -38,8 +39,7 @@ public class ProposalsSteps {
     @When("User clicks Add Item button and selects items from drop down list and clicks blue check button:")
     public void user_clicks_add_item_button_and_selects_items_from_drop_down_list_and_clicks_blue_check_button
             (DataTable dataTable) {
-        List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
-        Map<String, String> rowData = data.get(0);
+        rowData = DataTableUtils.getDataFromTable(dataTable);
         newProposalPage.selectItem(rowData.get("item1"));
         newProposalPage.clickCheckButton();
         newProposalPage.selectItem(rowData.get("item2"));

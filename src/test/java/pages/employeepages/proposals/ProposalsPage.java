@@ -1,4 +1,4 @@
-package pages.proposals;
+package pages.employeepages.proposals;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

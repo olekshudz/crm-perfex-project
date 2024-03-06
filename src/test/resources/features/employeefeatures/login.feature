@@ -11,5 +11,5 @@ Feature: Testing Login Functionality
     Then User verifies title is "Dashboard"
 
   Scenario: Negative Login
-    When User enters incorrect employee email and password and password
+    When User enters incorrect employee email and password
     Then User verifies error message "Invalid email or password" in red color

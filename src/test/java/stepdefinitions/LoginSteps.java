@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import pages.LoginPage;
+import pages.employeepages.LoginPage;
 import utils.ConfigReader;
 import utils.DriverHelper;
 
@@ -40,7 +40,7 @@ public class LoginSteps {
         Assert.assertTrue(driver.getTitle().trim().contains(title));
     }
 
-    @When("User enters incorrect employee email and password and password")
+    @When("User enters incorrect employee email and password")
     public void user_enters_incorrect_employee_email_and_password_and_password_and_clicks_login_button() {
         loginPage.login(ConfigReader.readProperty("incorrect_username"),
                 ConfigReader.readProperty("employee_password"));

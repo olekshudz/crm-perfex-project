@@ -17,5 +17,5 @@ Feature: Testing Sales Module Functionality
       | Items        |
 
   Scenario: Verify New Proposal button background color
-    Then User clicks Click "Proposals" module
+    Then User clicks "Proposals" module
     And User verifies that there is button New Proposal and it's background-color is "rgba(37, 99, 235, 1)"

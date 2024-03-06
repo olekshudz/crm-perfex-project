@@ -5,11 +5,11 @@ Feature: Testing Proposals Functionality
     Given Navigate to CRM url
     When User enters correct employee email and password
     And Click "Sales" Module from left side navigation menu
-    And User clicks Click "Proposals" module
+    And User clicks "Proposals" module
 
   @newProposal
   Scenario: Create New Proposal for a customer
-    And Click New Proposal button from top
+    When Click New Proposal button from top
     And User fills new proposal info with:
       | subject                | related  | customer | customerName | project | projectName                    |
       | Alex_Proposal_Test_TC5 | Customer | Apple    | Apple LLC    | Apple   | #1 - Apple Project - Apple LLC |
@@ -18,3 +18,10 @@ Feature: Testing Proposals Functionality
       | (253.00) Asus Monitor | (10.00) Ethernet Cable | 2        |
     Then User verifies that Total is "$300.30" and clicks Save & Send button
     And User finds created Proposal by clicking "Sales", "Proposals" and verify that its status is "Sent"
+
+    Scenario: Verify created Proposal as a customer
+
+
+#    Scenario: Verify approved proposal as employee
+#      When User sets table length "All" from drop down menu that is next to Export button on top of table
+#      Then User From table verify that approved proposal status label is "Accepted"
