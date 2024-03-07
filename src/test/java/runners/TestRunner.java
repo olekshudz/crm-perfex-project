@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
                 features = "src/test/resources/features",
                 glue = "stepdefinitions",
                 dryRun = false,
-                tags = "@customer",
+                tags = "@regression",
                 plugin = {"pretty", "html:target/report.html", "rerun:target/failedTests.txt"}
         )
 public class TestRunner {

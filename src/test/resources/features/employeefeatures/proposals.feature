@@ -1,4 +1,4 @@
-@regression
+@regression @employeeProposal
 Feature: Testing Proposals Functionality
 
   Background:
@@ -19,9 +19,5 @@ Feature: Testing Proposals Functionality
     Then User verifies that Total is "$300.30" and clicks Save & Send button
     And User finds created Proposal by clicking "Sales", "Proposals" and verify that its status is "Sent"
 
-    Scenario: Verify created Proposal as a customer
-
-
-#    Scenario: Verify approved proposal as employee
-#      When User sets table length "All" from drop down menu that is next to Export button on top of table
-#      Then User From table verify that approved proposal status label is "Accepted"
+  Scenario: Clear New Proposal Data
+    Then User deletes the created proposal "Alex_Proposal_Test_TC5"

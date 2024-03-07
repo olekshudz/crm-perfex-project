@@ -60,4 +60,19 @@ public class ProposalsSteps {
         mainPage.selectSalesModule(salesModule);
         Assert.assertEquals(status, proposalsPage.getStatus());
     }
+
+    @Then("User deletes the created proposal {string}")
+    public void user_deletes_the_created_proposal(String proposal) {
+        proposalsPage.deleteCreatedProposal(driver, proposal);
+    }
+
+    @When("User sets table length {string} from drop down menu that is next to Export button on top of table")
+    public void user_sets_table_length_from_drop_down_menu_that_is_next_to_export_button_on_top_of_table(String length) {
+        proposalsPage.selectTableLength(length);
+    }
+
+    @Then("From table verify that approved proposal status label is {string}")
+    public void from_table_verify_that_approved_proposal_status_label_is(String status) {
+        Assert.assertEquals(status, proposalsPage.getStatus());
+    }
 }
